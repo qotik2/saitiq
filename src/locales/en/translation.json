@@ -1,8 +1,8 @@
 {
-  "nav_my_channel": "My channel",
+  "nav_my_channel": "Channel",
   "nav_teletype": "Teletype",
   "nav_art": "Art",
-  "nav_guestbook": "Write something",
+  "nav_guestbook": "Write",
   "guestbook_title": "Here you can write me something",
   "guestbook_placeholder_name": "Your name (optional)",
   "guestbook_placeholder_message": "Your message...",

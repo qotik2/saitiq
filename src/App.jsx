@@ -56,18 +56,22 @@ export default function App() {
 
       {/* Sticky header */}
       <header className="glass header" style={{ position: 'relative' }}>
-        <nav>
-          <ul style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
-            <li style={{ cursor: 'pointer', color: '#a7aaff', fontWeight: 500, fontSize: '1.08rem' }} onClick={() => scrollToSection(channelRef)}>{t('nav_my_channel')}</li>
-            <span className="nav-divider">|</span>
-            <li style={{ cursor: 'pointer', color: '#a7aaff', fontWeight: 500, fontSize: '1.08rem' }} onClick={() => scrollToSection(teletypeRef)}>{t('nav_teletype')}</li>
-            <span className="nav-divider">|</span>
-            <li style={{ cursor: 'pointer', color: '#a7aaff', fontWeight: 500, fontSize: '1.08rem' }} onClick={() => scrollToSection(artRef)}>{t('nav_art')}</li>
-            <span className="nav-divider">|</span>
-            <li style={{ cursor: 'pointer', color: '#a7aaff', fontWeight: 500, fontSize: '1.08rem' }} onClick={() => scrollToSection(guestbookRef)}>{t('nav_guestbook')}</li>
-          </ul>
-        </nav>
-        <LanguageSwitcher />
+        <div className="header-row">
+          <nav>
+            <ul className="main-nav">
+              <li onClick={() => scrollToSection(channelRef)}>{t('nav_my_channel')}</li>
+              <span className="divider">|</span>
+              <li onClick={() => scrollToSection(teletypeRef)}>{t('nav_teletype')}</li>
+              <span className="divider">|</span>
+              <li onClick={() => scrollToSection(artRef)}>{t('nav_art')}</li>
+              <span className="divider">|</span>
+              <li onClick={() => scrollToSection(guestbookRef)}>{t('nav_guestbook')}</li>
+            </ul>
+          </nav>
+          <div className="language-toggle">
+            <LanguageSwitcher />
+          </div>
+        </div>
       </header>
 
       {/* Blue glassmorphism panel with avatar, текст и секции */}

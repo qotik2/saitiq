@@ -1,8 +1,8 @@
 {
-  "nav_my_channel": "Мой канал",
+  "nav_my_channel": "Канал",
   "nav_teletype": "Teletype",
   "nav_art": "Арт",
-  "nav_guestbook": "Написать что-то",
+  "nav_guestbook": "Написать",
   "guestbook_title": "Здесь вы можете что-нибудь написать мне",
   "guestbook_placeholder_name": "Ваше имя (необязательно)",
   "guestbook_placeholder_message": "Ваше сообщение...",
