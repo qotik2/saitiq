@@ -18,6 +18,7 @@ import art5 from './assets/arts/art5.jpg';
 import { GuestbookBlock } from './components/GuestbookBlock';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { useTranslation, Trans } from 'react-i18next';
+import i18n from './i18n';
 
 export default function App() {
   const { t } = useTranslation();
@@ -27,10 +28,12 @@ export default function App() {
   const teletypeRef = useRef(null);
   const artRef = useRef(null);
   const guestbookRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false); // состояние для бургер-меню
 
   function scrollToSection(ref) {
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMenuOpen(false); // закрывать меню при переходе
     }
   }
 
@@ -54,7 +57,7 @@ export default function App() {
         />
       </video>
 
-      {/* Sticky header */}
+      {/* Sticky header (desktop only) */}
       <header className="glass header" style={{ position: 'relative' }}>
         <div className="header-row">
           <nav>
@@ -73,6 +76,60 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {/* Мобильный бургер-меню */}
+      <button
+        className={`burger-btn${menuOpen ? ' open' : ''}`}
+        onClick={() => setMenuOpen(v => !v)}
+        aria-label="Открыть меню"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <nav className={`mobile-drawer${menuOpen ? ' open' : ''}`}>
+        <div className="drawer-content">
+          <ul className="drawer-nav">
+            <li onClick={() => scrollToSection(channelRef)}>{t('nav_my_channel')}</li>
+            <li onClick={() => scrollToSection(teletypeRef)}>{t('nav_teletype')}</li>
+            <li onClick={() => scrollToSection(artRef)}>{t('nav_art')}</li>
+            <li onClick={() => scrollToSection(guestbookRef)}>{t('nav_guestbook')}</li>
+          </ul>
+          <div className="drawer-lang-switcher" style={{ display: 'flex', gap: 8, marginTop: 18 }}>
+            <button
+              onClick={() => { i18n.changeLanguage('ru'); setMenuOpen(false); }}
+              style={{
+                background: i18n.language === 'ru' ? '#a7aaff' : 'none',
+                color: i18n.language === 'ru' ? '#181a2a' : '#a7aaff',
+                border: '1px solid #a7aaff',
+                borderRadius: 6,
+                padding: '2px 8px',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                fontWeight: 700
+              }}
+            >
+              ru
+            </button>
+            <button
+              onClick={() => { i18n.changeLanguage('en'); setMenuOpen(false); }}
+              style={{
+                background: i18n.language === 'en' ? '#a7aaff' : 'none',
+                color: i18n.language === 'en' ? '#181a2a' : '#a7aaff',
+                border: '1px solid #a7aaff',
+                borderRadius: 6,
+                padding: '2px 8px',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                fontWeight: 700
+              }}
+            >
+              en
+            </button>
+          </div>
+        </div>
+        <div className="drawer-backdrop" onClick={() => setMenuOpen(false)} />
+      </nav>
 
       {/* Blue glassmorphism panel with avatar, текст и секции */}
       <div className="steam-glass-frame">
