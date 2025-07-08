@@ -149,7 +149,9 @@ export const ChannelBlock = ({ channelId = '-1002204625015' }) => {
           >{char}</span>
         ))
       }
-      <img src={tgGif} alt="tg gif" style={{ height: 38, marginLeft: 8, verticalAlign: 'middle', borderRadius: 8 }} />
+      {window.innerWidth > 600 && (
+        <img src={tgGif} alt="tg gif" style={{ height: 38, marginLeft: 8, verticalAlign: 'middle', borderRadius: 8 }} />
+      )}
       </div>
       <div className="steam-favorite-content channel-flex channel-block-flex" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 12}}>
         <a href={channelUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', flexDirection: 'column', minWidth: 120 }}>
