@@ -41,7 +41,7 @@ export const useTgStat = (channelId) => {
     try {
       setLoading(true);
       setError(null);
-      const url = `/api/tgstat/channels/stat?token=${TGSTAT_TOKEN}&channelId=${channelId}`;
+      const url = `/api/tgstat?token=${TGSTAT_TOKEN}&channelId=${channelId}`;
       const response = await fetch(url);
       const text = await response.text();
       if (!text) {

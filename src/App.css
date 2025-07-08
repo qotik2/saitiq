@@ -1016,14 +1016,7 @@ header.glass.header {
     font-size: 0.95rem !important;
   }
   img[src*='tg.gif'] {
-    max-width: 60px !important;
-    max-height: 32px !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    margin: 0 0 0 4px !important;
-    vertical-align: middle !important;
-    display: inline-block !important;
+    display: none !important;
   }
   .intro-block,
   .steam-avatar-block,
