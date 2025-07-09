@@ -137,8 +137,10 @@ export default function App() {
         <div className="section-block intro-block">
           <div className="steam-avatar-block">
             <div className="avatar-overlay-container">
-              <img src={avatar} alt={t('intro_avatar_alt')} className="steam-avatar-img" />
-              <img src={holy} alt={t('intro_holy_alt')} className="holy-img" />
+              <div className="avatar-holy-wrapper">
+                <img src={avatar} alt={t('intro_avatar_alt')} className="steam-avatar-img" />
+                <img src={holy} alt={t('intro_holy_alt')} className="holy-img" />
+              </div>
             </div>
             <div className="avatar-caption">
               {t('intro_this_is_me')}
