@@ -147,7 +147,7 @@ export default function App() {
               <img src={kuromiGif} alt="kuromi gif" style={{ marginLeft: -10, verticalAlign: 'middle', width: 60, height: 60 }} />
             </div>
           </div>
-          <div className="custom-text-block" style={{ position: 'relative' }}>
+          <div className="custom-text-block">
             <img src={tgicon} alt="Telegram Icon" className="tg-icon-abs" />
             <Trans i18nKey="intro_text">
               Привет, меня зовут <strong>Sanrio</strong> — я овнер <span className="telegram-gradient">Telegram</span>-канала <span className="rajdhani-bold" style={{color: '#ff3b3b'}}>@notcloudcafe</span>, где пишу авторские статьи о крипторынке, делюсь мыслями и разбираю громкие новости. Акцент канала — блокчейн <span style={{color: '#009dff', fontWeight: 700}}>TON</span>, у меня есть свой блог на Teletype.
